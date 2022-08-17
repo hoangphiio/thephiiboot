@@ -1,0 +1,109 @@
+body {
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+}
+
+button {
+  all: unset;
+}
+
+.list-row {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.list-col {
+  width: 100%;
+}
+
+.list__thumuc {
+  padding: 5px;
+  color: black;
+  cursor: pointer;
+  display: flex;
+}
+
+.list__danhmucsanpham:hover {
+  color: blue;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.list__thumuc h4 {
+  border-bottom: 1px solid #f3f3f3;
+  padding: 10px;
+}
+
+.list__thumuc--danhmucsanpham:hover {
+  color: blue;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.list__thumuc--quanlydanhmuc:hover {
+  color: blue;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.list__addproduct--btn-add,
+.list__addproduct--btn-edit,
+.list__addproduct--btn-delete {
+  margin: 50px 0 0 0;
+  width: 10%;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  background-color: black;
+  cursor: pointer;
+  margin-right: 15px;
+  font-weight: normal;
+}
+
+.list__addproduct,
+.list__table--edit,
+.list__table--delete {
+  width: 100%;
+  font-weight: normal;
+  cursor: pointer;
+  margin: 0px 0 20px 0;
+}
+
+.list__table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th.sothutu {
+  width: 20%;
+}
+
+th.tensanpham {
+  width: 50%;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+.list__table--center td {
+  text-align: center;
+}
+
+button.addproduct--btn-add {
+  background: black;
+  color: white;
+  width: 100%;
+  height: 40px;
+}

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/demo.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../assets/Hovermaster/css/hover.css" />
+    <link rel="stylesheet" href="../https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>THE PHIIBOOT</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="menu">
+                <div class="menu__header--logo">
+                    <a href="index.html" class="menu__header img-logo">
+                        <img src="../img/img-logo/logo.png" alt="" />
+                    </a>
+                    <div class="menu__header--icon">
+                        <a href="#" class="account" id="modal-account" title="Tài khoản">
+                            <span>
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+                        </a>
+                        <div id="myModal" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <div class="modal-content__pagelogin">
+                                    <span class="close">&times;</span>
+                                    <p>ĐĂNG NHẬP</p>
+                                </div>
+                                <div class="modal-content__listlogin">
+                                    <div class="modal-content__input">
+                                        <div class="modal-content__username">
+                                            <label for="username">
+                                                <p>Tên tài khoản</p>
+                                            </label>
+                                            <input type="text" placeholder="Tên đăng nhập" name="username" />
+                                        </div>
+                                        <div class="modal-content__password">
+                                            <label for="psw">
+                                                <p>Mật khẩu</p>
+                                            </label>
+                                            <input type="password" placeholder="Mật khẩu" name="psw" required />
+                                        </div>
+                                    </div>
+                                    <div class="modal-content__rememberlogin">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="remember" />
+                                            Nhớ tài khoản
+                                        </label>
+                                    </div>
+                                    <div class="modal-content__login">
+                                        <button type="submit" class="hvr-grow-shadow">
+                                            Đăng nhập
+                                        </button>
+                                    </div>
+                                    <div class="modal-content__forgotlogin">
+                                        <p>
+                                            <a href="#">Quên mật khẩu ?</a>
+                                            <br />
+                                            hoặc
+                                            <a href="register.html">Đăng ký</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Side Bar -->
+                        <a href="#" class="search" title="Tài khoản" onclick="openNav()">
+                            <span>
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </a>
+                        <div class="menu__header-sidebar" id="menu-header__mysearch">
+                            <div class="menu-header__close">
+                                <p>Tìm kiếm</p>
+                                <span class="menu-hearder__btn-sidebar" onclick="closeNav()"
+                                    id="menu-header__btn-close">&times;</span>
+                            </div>
+                            <div class="menu-header__title-search">
+                                <input type="text" placeholder="Tìm kiếm sản phẩm" size="30" maxlength="40"
+                                    class="menu-header__search" />
+                                <button class="menu-header__btnsearch">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Side Bar -->
+
+                        <a href="shopping-cart.html" class="cart" title="Giỏ hàng" onclick="openNav1()">
+                            <span>
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                        </a>
+                        <div class="menu__header-sidebar" id="menu-header__myaddcart">
+                            <div class="menu-header__close">
+                                <p>Giỏ hàng</p>
+                                <span class="menu-hearder__btn-sidebar" onclick="closeNav1()"
+                                    id="menu-header__btn-close">&times;</span>
+                            </div>
+                            <div class="menu__header-cart">
+                                <div class="menu-header__cartview">
+                                    <table class="menu-header__addcart">
+                                        <tbody>
+                                            <td>
+                                                <tr>
+                                                    <p>Hiện chưa có sản phẩm nào được thêm</p>
+                                                </tr>
+                                            </td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <span class="menu-header__line"></span>
+                                <div class="menu-header__totaltable">
+                                    <table class="menu-header__listbill">
+                                        <tbody>
+                                            <tr>
+                                                <td class="menu-header__text-left">TỔNG TIỀN:</td>
+                                                <td class="menu-header__text-right" id="total-cart">
+                                                    0₫
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="menu-header__listhover">
+                                        <tr>
+                                            <td class="menu-header__hover-left hvr-shutter-in-vertical">
+                                                <p>XEM GIỎ HÀNG</p>
+                                            </td>
+                                            <td class="menu-header__hover-right hvr-shutter-in-vertical">
+                                                <p>THANH TOÁN</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-header__bars" id="menu-header__mybars">
+                            <a onclick="myFunction()" class="menu-header__iconrs">
+                                <i class="fas fa-bars" id="menu-header__barrs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu__nav" id="menu__nav-responsive">
+                <ul class="menu__nav--main">
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Giày Nam</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="CHELSEA BOOT" class="hvr-underline-from-center">
+                                            CHELSEA BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="DERBY" class="hvr-underline-from-center">
+                                            DERBY
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="HARNESS BOOT" class="hvr-underline-from-center">
+                                            HARNESS BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="ZIP BOOT" class="hvr-underline-from-center">
+                                            ZIP BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="COMBAT BOOT" class="hvr-underline-from-center">
+                                            COMBAT BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="OXFORD" class="hvr-underline-from-center">
+                                            OXFORD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="MONKSTRAP" class="hvr-underline-from-center">
+                                            MONKSTRAP
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Giày nữ</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="COMBAT BOOT" class="hvr-underline-from-center">
+                                            COMBAT BOOT</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHELSEABOOT NỮ" class="hvr-underline-from-center">CHELSEABOOT
+                                            NỮ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="DERBY" class="hvr-underline-from-center">
+                                            DERBY
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Phụ kiện</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="CHAIN" class="hvr-underline-from-center">
+                                            CHAIN</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="BANDANA" class="hvr-underline-from-center">BANDANA</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Giới thiệu</a>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Lối sống đẹp</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="BEAUTIFUL LIFESTYLE" class="hvr-underline-from-center">
+                                            BEAUTIFUL LIFESTYLE
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CÁC TIP VỀ THỜI TRANG" class="hvr-underline-from-center">CÁC
+                                            TIP VỀ THỜI TRANG</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Chính sách</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH ĐỔI HÀNG" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH ĐỔI HÀNG
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH BẢO HÀNH" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH BẢO HÀNH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH THANH TOÁN" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH THANH TOÁN
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="HÌNH THỨC VẬN CHUYỂN" class="hvr-underline-from-center">
+                                            HÌNH THỨC VẬN CHUYỂN
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH BẢO MẬT" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH BẢO MẬT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH BẢO VỆ THÔNG TIN CÁ NHÂN"
+                                            class="hvr-underline-from-center">
+                                            CHÍNH SÁCH BẢO VỆ THÔNG TIN CÁ NHÂN
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="breadcrumb">
+        <div class="breadcrumb">
+            <div class="breadcrumb__arrows">
+                <div class="breadcrumb__arrows--index">
+                    <a href="">
+                        <p>TRANG CHỦ / &nbsp;</p>
+                    </a>
+                </div>
+                <div class="breadcrumb__arrows--index2">
+                    <a href="">
+                        <p>TẤT CẢ SẢN PHẨM / &nbsp;</p>
+                    </a>
+                </div>
+                <div class="breadcrumb__arrows--index3">
+                    <a href="">
+                        <p> GIỎ HÀNG</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="shopping-cart">
+        <div class="shopping-cart">
+            <div class="shopping-cart__row">
+                <div class="shopping-cart__col">
+                    <div class="shopping-cart-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Hình ảnh</th>
+                                    <th class="p-name">Tên sản phẩm</th>
+                                    <th>Giá sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng tiền</th>
+                                    <th><i class="fas fa-times"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="shopping-cart__cart-pic"><img
+                                            src="../img/img-addcart/img-addcart-01.webp" alt="" width="200px"></td>
+                                    <td class="shopping-cart__cart-title">
+                                        <h5>THE CLASSIC CHELSEA BOOT - BLACK</h5>
+                                    </td>
+                                    <td class="shopping-cart__price">1.800.000₫</td>
+                                    <td class="shopping-cart__qua-col">
+                                        <div class="shopping-cart__quantity">
+                                            <div class="pro-qty">
+                                                <input type="number" id="1" value="1" min="1" max="3" readonly />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shopping-cart__total-price">1.800.000₫</td>
+                                    <td class="shopping-cart__close-td"><i class="fas fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="shopping-cart__cart-pic"><img
+                                            src="../img/img-addcart/img-addcart-02.webp" alt="" width="200px"></td>
+                                    <td class="shopping-cart__cart-title">
+                                        <h5>THE BASIC WOLF CHELSEA BOOT - TAN</h5>
+                                    </td>
+                                    <td class="shopping-cart__price">1.800.000₫</td>
+                                    <td class="shopping-cart__qua-col">
+                                        <div class="shopping-cart__quantity">
+                                            <div class="pro-qty">
+                                                <input type="number" id="1" value="1" min="1" max="3" readonly />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shopping-cart__total-price">1.600.000₫</td>
+                                    <td class="shopping-cart__close-td"><i class="fas fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="shopping-cart__cart-pic"><img
+                                            src="../img/img-addcart/img-addcart-03.webp" alt="" width="200px"></td>
+                                    <td class="shopping-cart__cart-title">
+                                        <h5>THE WOLF SPECTATOR OXFORD - BROWN</h5>
+                                    </td>
+                                    <td class="shopping-cart__price">1.800.000₫</td>
+                                    <td class="shopping-cart__qua-col">
+                                        <div class="shopping-cart__quantity">
+                                            <div class="pro-qty">
+                                                <input type="number" id="1" value="1" min="1" max="3" readonly />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shopping-cart__total-price">1.800.000₫</td>
+                                    <td class="shopping-cart__close-td"><i class="fas fa-times"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="shopping-cart__button">
+                        <div class="shopping-cart__continue hvr-grow-shadow">
+                            <a href="#">
+                                <button>TIẾP TỤC MUA SẮM</button>
+                            </a>
+                        </div>
+                        <div class="shopping-cart__total">
+                            <div class="shopping-cart__proceed-checkout">
+                                <ul>
+                                    <li class="cart-total">Tổng tiền: <span>5.400.000₫</span></li>
+                                </ul>
+                                <a href="#" class="proceed-btn hvr-grow-shadow">THANH TOÁN</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer__all">
+            <div class="footer-all__top">
+                <div class="footer-all__row">
+                    <div class="footer-all__inforegister">
+                        <p>
+                            <i class="fas fa-envelope-open-text"></i> Đăng ký nhận thông tin
+                        </p>
+                    </div>
+                    <div class="footer-all__middle">
+                        <div class="footer-all__input">
+                            <input type="text1" placeholder="Nhập email của bạn" name="contact[email]" />
+                        </div>
+                        <div class="footer-all__button hvr-grow-shadow">
+                            <button>Đăng kí</button>
+                        </div>
+                    </div>
+                    <div class="footer-all__call">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Hotline:</span>
+                        <a href="#">0903873915</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-all__bottom">
+                <div class="footer-all__row">
+                    <div class="footer-all__col2">
+                        <div class="footer-all__introduce">
+                            <a href="#">
+                                <h3 class="hvr-underline-from-center">THE PHIIBOOT</h3>
+                            </a>
+                            <p>
+                                THE PHIIBOOT là thương hiệu đồ da hàng đầu Việt Nam, sứ mệnh
+                                của chúng tôi là tạo ra những sản phẩm với chất lượng đạt
+                                chuẩn cao cấp, hoàn hảo ở từng chi tiết nhỏ nhất.
+                            </p>
+                            <img src="../img/img-footer/img-footer-01.webp" alt="" />
+                        </div>
+                        <div class="footer-all__info">
+                            <a href="#">
+                                <h4 class="hvr-underline-from-center">CHÍNH SÁCH</h4>
+                            </a>
+                            <ul>
+                                <a href="#">
+                                    <li>THE PHIIBOOT</li>
+                                </a>
+                                <a href="#">
+                                    <li>Chính sách bảo hành</li>
+                                </a>
+                                <a href="#">
+                                    <li>Chính sách đổi trả</li>
+                                </a>
+                                <a href="#">
+                                    <li>Phương thức thanh toán</li>
+                                </a>
+                                <a href="#">
+                                    <li>Hướng dẫn chọn size</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="footer-all__contact">
+                            <a href="#">
+                                <h4 class="hvr-underline-from-center">THÔNG TIN LIÊN HỆ</h4>
+                            </a>
+                            <div class="footer-all__address">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận Tân Bình</p>
+                            </div>
+                            <div class="footer-all__hotline">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Hotline:</span>
+                                <a href="#">0903873915</a>
+                            </div>
+                            <div class="footer-all__mail">
+                                <p>
+                                    <i class="fas fa-paper-plane"></i> nvhoangphi0905@gmail.com
+                                </p>
+                            </div>
+                            <div class="footer-all__network">
+                                <a href="https://www.facebook.com/" class="facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" class="instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-all__branch">
+                            <a href="#">
+                                <h4 class="hvr-underline-from-center">CHI NHÁNH</h4>
+                            </a>
+                            <div class="footer-all__branch1">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận Tân Bình</p>
+                            </div>
+                            <div class="footer-all__branch2">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận Tân Phú</p>
+                            </div>
+                            <div class="footer-all__branch3">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận 12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-all__copyright">
+                <div class="footer-all__col3">
+                    <small>
+                        Copyright<i class="far fa-copyright"></i>2021 THE PHIIBOOT. Công
+                        ty TNHH THE PHIBOOT. Địa chỉ Phường 10, Quận Tân Bình, TP.HCM. Mã
+                        số thuế 1711547282 cấp ngày 2017
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+
+    <!-- Swiper JS -->
+    <script src="../package/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        function openNav() {
+            document.getElementById("menu-header__mysearch").style.width = "30%";
+        }
+        function closeNav() {
+            document.getElementById("menu-header__mysearch").style.width = "0";
+        }
+    </script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("modal-account");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+            modal.style.transition = "all 5s ease 5.8s";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("menu__nav-responsive");
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            if (x.className === "menu__nav") {
+                x.className += " responsive";
+                document.getElementById("menu-header__barrs").style.color = "white";
+            } else {
+                x.className = "menu__nav";
+                document.body.style.backgroundColor = "white";
+                document.getElementById("menu-header__barrs").style.color = "black";
+            }
+        }
+    </script>
+    <script>
+        $('.add').click(function () {
+            if ($(this).prev().val() < 3) {
+                $(this).prev().val(+$(this).prev().val() + 1);
+            }
+        });
+        $('.sub').click(function () {
+            if ($(this).next().val() > 1) {
+                if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

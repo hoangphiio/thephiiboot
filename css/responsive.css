@@ -1,0 +1,206 @@
+@media screen and (max-width: 991px) {
+  .menu__nav {
+    display: none;
+  }
+  .menu__nav.responsive {
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+  }
+
+  ul.menu__nav--dropdown-shoesmen {
+    padding: unset;
+    width: 100%;
+  }
+
+  .menu__nav--dropdown-shoesmen li {
+    margin-top: 10px;
+  }
+
+  .menu__nav--all {
+    display: flex;
+    margin-top: unset;
+  }
+
+  i.fas.fa-times {
+    display: block;
+    width: 95%;
+    text-align: right;
+  }
+
+  .menu__nav--main {
+    width: 100%;
+    padding: unset;
+    display: unset;
+  }
+
+  .menu__nav--dropdown {
+    width: 100%;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .img-logo {
+    width: 50%;
+    float: left;
+  }
+
+  .menu__header--icon {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  a#modal-account {
+    padding: 0 10px;
+  }
+
+  a.cart {
+    padding: 0 10px 0 0;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .modal-content {
+    width: 85%;
+    padding: 10px;
+  }
+
+  .modal-content__pagelogin {
+    font-size: 25px;
+  }
+
+  .modal-content__username {
+    display: flex;
+  }
+
+  .modal-content__input {
+    width: 100%;
+  }
+
+  .modal-content__username label {
+    font-size: 15px;
+    margin-right: 20px;
+  }
+
+  .modal-content__password {
+    display: flex;
+  }
+
+  .modal-content__password label {
+    font-size: 15px;
+    margin-right: 47px;
+  }
+  .modal-content__rememberlogin {
+    text-align: left;
+    width: 100%;
+  }
+
+  .menu-header__totaltable {
+    width: 90%;
+  }
+
+  table.menu-header__listbill {
+    margin: 0 auto;
+  }
+
+  td.menu-header__text-left {
+    text-align: left;
+  }
+
+  td.menu-header__hover-left {
+    margin-right: unset;
+    width: 80%;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  td.menu-header__hover-right {
+    width: 80%;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .menu-header__iconrs {
+    display: block;
+  }
+
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .footer-all__row {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .footer-all__inforegister {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .footer-all__middle {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .footer-all__call {
+    width: 100%;
+    text-align: center;
+    display: unset;
+    align-items: unset;
+  }
+
+  .footer-all__input {
+    width: 79%;
+  }
+
+  .footer-all__col2 {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .footer-all__introduce {
+    width: 100%;
+  }
+
+  .footer-all__info {
+    width: 100%;
+    padding: unset;
+    text-align: center;
+  }
+
+  .footer-all__contact {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-all__branch {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content__product {
+    width: 100%;
+  }
+
+  li.content-product__collection--tab1 {
+    font-size: 14px;
+  }
+
+  .content-product__shoesman2 {
+    margin-left: -136px;
+    width: 137px;
+  }
+
+  .content-product__shoesman--text a {
+    font-size: 10px;
+  }
+}
+

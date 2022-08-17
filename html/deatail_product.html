@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/demo.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../assets/Hovermaster/css/hover.css" />
+    <link rel="stylesheet" href="../https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>THE PHIIBOOT</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="menu">
+                <div class="menu__header--logo">
+                    <a href="index.html" class="menu__header img-logo">
+                        <img src="../img/img-logo/logo.png" alt="" />
+                    </a>
+                    <div class="menu__header--icon">
+                        <a href="#" class="account" id="modal-account" title="Tài khoản">
+                            <span>
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+                        </a>
+                        <div id="myModal" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <div class="modal-content__pagelogin">
+                                    <span class="close">&times;</span>
+                                    <p>ĐĂNG NHẬP</p>
+                                </div>
+                                <div class="modal-content__listlogin">
+                                    <div class="modal-content__input">
+                                        <div class="modal-content__username">
+                                            <label for="username">
+                                                <p>Tên tài khoản</p>
+                                            </label>
+                                            <input type="text" placeholder="Tên đăng nhập" name="username" />
+                                        </div>
+                                        <div class="modal-content__password">
+                                            <label for="psw">
+                                                <p>Mật khẩu</p>
+                                            </label>
+                                            <input type="password" placeholder="Mật khẩu" name="psw" required />
+                                        </div>
+                                    </div>
+                                    <div class="modal-content__rememberlogin">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="remember" />
+                                            Nhớ tài khoản
+                                        </label>
+                                    </div>
+                                    <div class="modal-content__login">
+                                        <button type="submit" class="hvr-grow-shadow">
+                                            Đăng nhập
+                                        </button>
+                                    </div>
+                                    <div class="modal-content__forgotlogin">
+                                        <p>
+                                            <a href="#">Quên mật khẩu ?</a>
+                                            <br />
+                                            hoặc
+                                            <a href="register.html">Đăng ký</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Side Bar -->
+                        <a href="#" class="search" title="Tài khoản" onclick="openNav()">
+                            <span>
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </a>
+                        <div class="menu__header-sidebar" id="menu-header__mysearch">
+                            <div class="menu-header__close">
+                                <p>Tìm kiếm</p>
+                                <span class="menu-hearder__btn-sidebar" onclick="closeNav()"
+                                    id="menu-header__btn-close">&times;</span>
+                            </div>
+                            <div class="menu-header__title-search">
+                                <input type="text" placeholder="Tìm kiếm sản phẩm" size="30" maxlength="40"
+                                    class="menu-header__search" />
+                                <button class="menu-header__btnsearch">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Side Bar -->
+
+                        <a href="shopping-cart.html" class="cart" title="Giỏ hàng" onclick="openNav1()">
+                            <span>
+                                <i class="fas fa-shopping-cart"></i>
+                            </span>
+                        </a>
+                        <div class="menu__header-sidebar" id="menu-header__myaddcart">
+                            <div class="menu-header__close">
+                                <p>Giỏ hàng</p>
+                                <span class="menu-hearder__btn-sidebar" onclick="closeNav1()"
+                                    id="menu-header__btn-close">&times;</span>
+                            </div>
+                            <div class="menu__header-cart">
+                                <div class="menu-header__cartview">
+                                    <table class="menu-header__addcart">
+                                        <tbody>
+                                            <td>
+                                                <tr>
+                                                    <p>Hiện chưa có sản phẩm nào được thêm</p>
+                                                </tr>
+                                            </td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <span class="menu-header__line"></span>
+                                <div class="menu-header__totaltable">
+                                    <table class="menu-header__listbill">
+                                        <tbody>
+                                            <tr>
+                                                <td class="menu-header__text-left">TỔNG TIỀN:</td>
+                                                <td class="menu-header__text-right" id="total-cart">
+                                                    0₫
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="menu-header__listhover">
+                                        <tr>
+                                            <td class="menu-header__hover-left hvr-shutter-in-vertical">
+                                                <p>XEM GIỎ HÀNG</p>
+                                            </td>
+                                            <td class="menu-header__hover-right hvr-shutter-in-vertical">
+                                                <p>THANH TOÁN</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-header__bars" id="menu-header__mybars">
+                            <a onclick="myFunction()" class="menu-header__iconrs">
+                                <i class="fas fa-bars" id="menu-header__barrs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu__nav" id="menu__nav-responsive">
+                <ul class="menu__nav--main">
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Giày Nam</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="CHELSEA BOOT" class="hvr-underline-from-center">
+                                            CHELSEA BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="DERBY" class="hvr-underline-from-center">
+                                            DERBY
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="HARNESS BOOT" class="hvr-underline-from-center">
+                                            HARNESS BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="ZIP BOOT" class="hvr-underline-from-center">
+                                            ZIP BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="COMBAT BOOT" class="hvr-underline-from-center">
+                                            COMBAT BOOT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="OXFORD" class="hvr-underline-from-center">
+                                            OXFORD
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="MONKSTRAP" class="hvr-underline-from-center">
+                                            MONKSTRAP
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Giày nữ</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="COMBAT BOOT" class="hvr-underline-from-center">
+                                            COMBAT BOOT</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHELSEABOOT NỮ" class="hvr-underline-from-center">CHELSEABOOT
+                                            NỮ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="DERBY" class="hvr-underline-from-center">
+                                            DERBY
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Phụ kiện</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="CHAIN" class="hvr-underline-from-center">
+                                            CHAIN</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="BANDANA" class="hvr-underline-from-center">BANDANA</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Giới thiệu</a>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Lối sống đẹp</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="BEAUTIFUL LIFESTYLE" class="hvr-underline-from-center">
+                                            BEAUTIFUL LIFESTYLE
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CÁC TIP VỀ THỜI TRANG" class="hvr-underline-from-center">CÁC
+                                            TIP VỀ THỜI TRANG</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="menu__nav--dropdown">
+                        <div class="menu__nav--title hvr-underline-from-center">
+                            <a href="#" title="Giày Nam"> Chính sách</a>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <div class="menu__nav--dropdown-list">
+                            <div class="menu__nav--all">
+                                <ul class="menu__nav--dropdown-shoesmen">
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH ĐỔI HÀNG" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH ĐỔI HÀNG
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH BẢO HÀNH" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH BẢO HÀNH
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH THANH TOÁN" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH THANH TOÁN
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="HÌNH THỨC VẬN CHUYỂN" class="hvr-underline-from-center">
+                                            HÌNH THỨC VẬN CHUYỂN
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH BẢO MẬT" class="hvr-underline-from-center">
+                                            CHÍNH SÁCH BẢO MẬT
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="CHÍNH SÁCH BẢO VỆ THÔNG TIN CÁ NHÂN"
+                                            class="hvr-underline-from-center">
+                                            CHÍNH SÁCH BẢO VỆ THÔNG TIN CÁ NHÂN
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="breadcrumb">
+        <div class="breadcrumb">
+            <div class="breadcrumb__arrows">
+                <div class="breadcrumb__arrows--index">
+                    <a href="">
+                        <p>TRANG CHỦ / &nbsp;</p>
+                    </a>
+                </div>
+                <div class="breadcrumb__arrows--index2">
+                    <a href="">
+                        <p>TẤT CẢ SẢN PHẨM / &nbsp;</p>
+                    </a>
+                </div>
+                <div class="breadcrumb__arrows--index3">
+                    <a href="">
+                        <p> THE CLASSIC CHELSEA BOOT - BLACK</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="detail-product">
+        <div class="deatail-product">
+            <div class="detail-product__row">
+                <div class="detail-product__col-01">
+                    <div class="wrapper">
+
+                        <div class="image-gallery">
+                            <aside class="thumbnails">
+                                <a class="selected thumbnail" data-big="../img/img-detail/img-detail-001.webp">
+                                    <div class="thumbnail-image"
+                                        style="background-image: url('../img/img-detail/img-detail-001.webp')"></div>
+                                </a>
+                                <a class="thumbnail" data-big="../img/img-detail/img-detail-02.webp">
+                                    <div class="thumbnail-image"
+                                        style="background-image: url('../img/img-detail/img-detail-02.webp')"></div>
+                                </a>
+                                <a class="thumbnail" data-big="../img/img-detail/img-detail-03.webp">
+                                    <div class="thumbnail-image"
+                                        style="background-image: url('../img/img-detail/img-detail-03.webp')"></div>
+                                </a>
+                                <a class="selected thumbnail" data-big="../img/img-detail/img-detail-04.webp">
+                                    <div class="thumbnail-image"
+                                        style="background-image: url('../img/img-detail/img-detail-04.webp')"></div>
+                                </a>
+                                <a class="selected thumbnail" data-big="../img/img-detail/img-detail-05.webp">
+                                    <div class="thumbnail-image"
+                                        style="background-image: url('../img/img-detail/img-detail-05.webp')"></div>
+                                </a>
+                            </aside>
+
+                            <main class="primary"
+                                style="background-image: url('../img/img-detail/img-detail-001.webp');">
+                            </main>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="detail-product__col-02">
+                    <div class="deail-product__name">
+                        <h2>THE CLASSIC CHELSEA BOOT - BLACK </h2>
+                    </div>
+                    <div class="detail-product__code">
+                        <p>SKU: 62CMDL-5</p>
+                    </div>
+                    <div class="detail-product__price">
+                        <p>1,800,000₫</p>
+                    </div>
+                    <div class="detail-product__installmen">
+                        <p>hoặc 600,000₫ x 3 kỳ với <strong>Fundiin</strong></p>
+                    </div>
+                    <div class="detail-product__color">
+                        <p>BLACK</p>
+                    </div>
+                    <div class="detail-product__input-color">
+                        <input id="swatch-0-black" type="radio" name="option1" value="BLACK" data-vhandle="black"
+                            checked="">
+                        <label for="swatch-0-black">
+                            <span>BLACK</span>
+                        </label>
+                    </div>
+                    <div class="detail-product__swatch">
+                        <div class="detail-product__swatch--select">
+                            <div data-value="39 EU" class="detail-product__swatch">
+                                <input id="swatch-1-39-eu" type="radio" name="option2" value="39 EU"
+                                    data-vhandle="39-eu" checked="">
+                                <label for="swatch-1-39-eu">
+                                    <p>39 EU</p>
+                                </label>
+                            </div>
+                            <div data-value="40 EU" class="detail-product__swatch">
+                                <input id="swatch-1-40-eu" type="radio" name="option2" value="40 EU"
+                                    data-vhandle="40-eu">
+                                <label for="swatch-1-40-eu">
+                                    <p>40 EU</p>
+                                </label>
+                            </div>
+                            <div data-value="41 EU" class="detail-product__swatch">
+                                <input id="swatch-1-41-eu" type="radio" name="option2" value="41 EU"
+                                    data-vhandle="41-eu">
+                                <label for="swatch-1-41-eu">
+                                    <p>41 EU</p>
+                                </label>
+                            </div>
+                            <div data-value="42 EU" class="detail-product__swatch">
+                                <input id="swatch-1-42-eu" type="radio" name="option2" value="42 EU"
+                                    data-vhandle="42-eu">
+                                <label for="swatch-1-42-eu">
+                                    <p>42 EU</p>
+                                </label>
+                            </div>
+                            <div data-value="43 EU" class="detail-product__swatch">
+                                <input id="swatch-1-43-eu" type="radio" name="option2" value="43 EU"
+                                    data-vhandle="43-eu">
+                                <label for="swatch-1-43-eu">
+                                    <p>43 EU</p>
+                                </label>
+                            </div>
+                            <div data-value="44 EU" class="detail-product__swatch">
+                                <input id="swatch-1-44-eu" type="radio" name="option2" value="44 EU"
+                                    data-vhandle="44-eu">
+                                <label for="swatch-1-44-eu">
+                                    <p>44 EU</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-product__modal">
+                        <div class="detail-product__modal--p">
+                            <p id="myBtn1">Hướng dẫn chọn size</p>
+                        </div>
+                        <!-- The Modal -->
+                        <div id="myModal1" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <p>Some text in the Modal..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-product__quantity">
+                        <button type="button" id="sub" class="sub">-</button>
+                        <input type="number" id="1" value="1" min="1" max="3" />
+                        <button type="button" id="add" class="add">+</button>
+                    </div>
+                    <div class="detail-product__addcart hvr-sweep-to-right">
+                        <span>THÊM VÀO GIỎ HÀNG</span>
+                    </div>
+                    <div class="detail-product__hotline">
+                        <p>Gọi đặt mua: <strong>090387915</strong></p>
+                    </div>
+                    <div class="detail-product__icon">
+                        <div class="detail-product__icon--text">
+                            <i class="far fa-newspaper"></i>
+                            <p>KIỂM TRA HÀNG VÀ THÀNH TOÁN KHI <strong>NHẬN HÀNG</strong></p>
+                        </div>
+                        <div class="detail-product__icon--text">
+                            <i class="fas fa-truck-moving"></i>
+                            <p>GIAO HÀNG <strong>TOÀN QUỐC</strong></p>
+                        </div>
+                        <div class="detail-product__icon--text">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>BẢO HÀNH, BẢO DƯỠNG <strong>3 NĂM</span></p>
+                        </div>
+                        <div class="detail-product__icon--text">
+                            <i class="fas fa-medal"></i>
+                            <p><strong>ĐỔI SIZE, ĐỔI MẪU</strong> ĐỐI VỚI SẢN PHẨM CHƯA QUA SỬ DỤNG</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="content">
+        <div class="content__product">
+            <div class="content-product__collection">
+                <div class="content-product__collection--text">
+                    <p>Bộ sưu tập</p>
+                </div>
+                <div class="content-product__collection--classify">
+                    <ul class="content-product__collection--tabs">
+                        <li class="content-product__collection--tab1" onclick="openshoes2('shoes2man')">
+                            <h3 class="hvr-underline-from-center">Giày thấp cổ</h3>
+                        </li>
+                        <li class="content-product__collection--tab1" onclick="openshoes2('shoes2women')">
+                            <h3 class="hvr-underline-from-center">Giày cao cổ</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content__product--row shoes2" id="shoes2man">
+                <div class="content-product__col--list1">
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-thapco-01.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-thapco-02.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE MODERN DERBY – BLACK GRAIN</a>
+                            <p>
+                                <span>1,600,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-thapco-03.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-thapco-04.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE WOLF SPECTATOR OXFORD - BROWN</a>
+                            <p>
+                                <span>1,800,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-thapco-05.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-thapco-06.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE WOLF SPECTATOR OXFORD - BLACK</a>
+                            <p>
+                                <span>1,800,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-product__col--list1">
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-thapco-07.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-thapco-08.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE WOLF METAL DERBY - BLACK</a>
+                            <p>
+                                <span>1,700,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-thapco-09.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-thapco-10.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE CLASSIC CAPTOE OXFORD – BLACK</a>
+                            <p>
+                                <span>1,500,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-thapco-11.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-thapco-12.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE MODERN BROGUE DERBY – BLACK GRAIN AND WHITE
+                            </a>
+                            <p>
+                                <span>1,700,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content__product--row shoes2" id="shoes2women" style="display: none">
+                <div class="content-product__col--list1">
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-caoco-01.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-caoco-02.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE WILD WALK CHELSEA BOOT – TAN</a>
+                            <p>
+                                <span>2,050,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-caoco-03.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-caoco-04.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE ALPHA WOLF HARNESS BOOT - BLACK</a>
+                            <p>
+                                <span>2,450,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-product__shoesman">
+                        <a href="#" class="content-product__shoesman1">
+                            <img src="../img/img-content/img-content-caoco-05.webp" alt="" />
+                        </a>
+                        <a href="#" class="content-product__shoesman2">
+                            <img src="../img/img-content/img-content-caoco-06.webp" alt="" />
+                        </a>
+                        <div class="content-product__shoesman--text">
+                            <a href="#">THE WILD WALK CHELSEA BOOT – BLACK SUEDE
+                            </a>
+                            <p>
+                                <span>2,050,000₫</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content__product--seeall">
+                <a href="#" class="content__product--btnsee hvr-sweep-to-right">
+                    <span> XEM TẤT CẢ </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-01.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-02.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-03.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-04.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-05.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-06.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-07.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-08.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__outfit">
+                    <div class="swiper-slide__img">
+                        <img src="../img/img-swiper/img-swiper-09.webp" alt="" />
+                    </div>
+                    <div class="swiper-slide__overlay">
+                        <a href="#" class="swiper-slide__text">
+                            <span class="hvr-underline-from-left">Shop this look</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer__all">
+            <div class="footer-all__top">
+                <div class="footer-all__row">
+                    <div class="footer-all__inforegister">
+                        <p>
+                            <i class="fas fa-envelope-open-text"></i> Đăng ký nhận thông tin
+                        </p>
+                    </div>
+                    <div class="footer-all__middle">
+                        <div class="footer-all__input">
+                            <input type="text1" placeholder="Nhập email của bạn" name="contact[email]" />
+                        </div>
+                        <div class="footer-all__button hvr-grow-shadow">
+                            <button>Đăng kí</button>
+                        </div>
+                    </div>
+                    <div class="footer-all__call">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Hotline:</span>
+                        <a href="#">0903873915</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-all__bottom">
+                <div class="footer-all__row">
+                    <div class="footer-all__col2">
+                        <div class="footer-all__introduce">
+                            <a href="#">
+                                <h3 class="hvr-underline-from-center">THE PHIIBOOT</h3>
+                            </a>
+                            <p>
+                                THE PHIIBOOT là thương hiệu đồ da hàng đầu Việt Nam, sứ mệnh
+                                của chúng tôi là tạo ra những sản phẩm với chất lượng đạt
+                                chuẩn cao cấp, hoàn hảo ở từng chi tiết nhỏ nhất.
+                            </p>
+                            <img src="../img/img-footer/img-footer-01.webp" alt="" />
+                        </div>
+                        <div class="footer-all__info">
+                            <a href="#">
+                                <h4 class="hvr-underline-from-center">CHÍNH SÁCH</h4>
+                            </a>
+                            <ul>
+                                <a href="#">
+                                    <li>THE PHIIBOOT</li>
+                                </a>
+                                <a href="#">
+                                    <li>Chính sách bảo hành</li>
+                                </a>
+                                <a href="#">
+                                    <li>Chính sách đổi trả</li>
+                                </a>
+                                <a href="#">
+                                    <li>Phương thức thanh toán</li>
+                                </a>
+                                <a href="#">
+                                    <li>Hướng dẫn chọn size</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="footer-all__contact">
+                            <a href="#">
+                                <h4 class="hvr-underline-from-center">THÔNG TIN LIÊN HỆ</h4>
+                            </a>
+                            <div class="footer-all__address">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận Tân Bình</p>
+                            </div>
+                            <div class="footer-all__hotline">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Hotline:</span>
+                                <a href="#">0903873915</a>
+                            </div>
+                            <div class="footer-all__mail">
+                                <p>
+                                    <i class="fas fa-paper-plane"></i> nvhoangphi0905@gmail.com
+                                </p>
+                            </div>
+                            <div class="footer-all__network">
+                                <a href="https://www.facebook.com/" class="facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" class="instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-all__branch">
+                            <a href="#">
+                                <h4 class="hvr-underline-from-center">CHI NHÁNH</h4>
+                            </a>
+                            <div class="footer-all__branch1">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận Tân Bình</p>
+                            </div>
+                            <div class="footer-all__branch2">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận Tân Phú</p>
+                            </div>
+                            <div class="footer-all__branch3">
+                                <p><i class="fas fa-map-marker-alt"></i> Quận 12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-all__copyright">
+                <div class="footer-all__col3">
+                    <small>
+                        Copyright<i class="far fa-copyright"></i>2021 THE PHIIBOOT. Công
+                        ty TNHH THE PHIBOOT. Địa chỉ Phường 10, Quận Tân Bình, TP.HCM. Mã
+                        số thuế 1711547282 cấp ngày 2017
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+
+    <!-- Swiper JS -->
+    <script src="../package/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        function openNav() {
+            document.getElementById("menu-header__mysearch").style.width = "30%";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+        function closeNav() {
+            document.getElementById("menu-header__mysearch").style.width = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("modal-account");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+            modal.style.transition = "all 5s ease 5.8s";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("menu__nav-responsive");
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            if (x.className === "menu__nav") {
+                x.className += " responsive";
+                document.getElementById("menu-header__barrs").style.color = "white";
+            } else {
+                x.className = "menu__nav";
+                document.body.style.backgroundColor = "white";
+                document.getElementById("menu-header__barrs").style.color = "black";
+            }
+        }
+    </script>
+
+    <script>
+        function openshoes(shoesName) {
+            var i;
+            var x = document.getElementsByClassName("shoes");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(shoesName).style.display = "block";
+        }
+
+        function openshoes1(shoes1Name) {
+            var i;
+            var x = document.getElementsByClassName("shoes1");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(shoes1Name).style.display = "block";
+        }
+
+        function openshoes2(shoes2Name) {
+            var i;
+            var x = document.getElementsByClassName("shoes2");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(shoes2Name).style.display = "block";
+        }
+    </script>
+
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            spaceBetween: 30,
+            slidesPerView: 3,
+            loop: true,
+
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+    <script>
+        $('.thumbnail').on('click', function () {
+            var clicked = $(this);
+            var newSelection = clicked.data('big');
+            var $img = $('.primary').css("background-image", "url(" + newSelection + ")");
+            clicked.parent().find('.thumbnail').removeClass('selected');
+            clicked.addClass('selected');
+            $('.primary').empty().append($img.hide().fadeIn('slow'));
+        });
+    </script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal1");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn1");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        $('.add').click(function () {
+            if ($(this).prev().val() < 3) {
+                $(this).prev().val(+$(this).prev().val() + 1);
+            }
+        });
+        $('.sub').click(function () {
+            if ($(this).next().val() > 1) {
+                if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

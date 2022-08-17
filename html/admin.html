@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../assets/Hovermaster/css/hover.css" />
+    <!--  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
+    <title>ADMIN</title>
+</head>
+
+<body>
+    <main id="admin">
+        <div class="list-container">
+            <div class="list-row">
+                <div class="list-col">
+                    <div class="list__thumuc">
+                        <div class="list__thumuc--quanlydanhmuc" onclick="openpages('quanly')">
+                            <h4>QUẢN LÝ DANH MỤC</h4>
+                        </div>
+                        <div class="list__thumuc--danhmucsanpham" onclick="openpages('sanpham')">
+                            <h4>DANH MỤC SẢN PHẨM</h4>
+                        </div>
+                    </div>
+                    <div class="list__addproduct">
+                        <button class="list__addproduct--btn-add hvr-grow-shadow">
+                            THÊM MỚI
+                        </button>
+                        <button class="list__addproduct--btn-edit hvr-grow-shadow">
+                            SỬA
+                        </button>
+                        <button class="list__addproduct--btn-delete hvr-grow-shadow">
+                            XÓA
+                        </button>
+                    </div>
+                    <div class="list__table">
+                        <div class="list__table--col1 pages" id="quanly">
+                            <table>
+                                <tbody class="list__table--header">
+                                    <tr>
+                                        <th class="sothutu">
+                                            <p>Số thứ tự</p>
+                                        </th>
+                                        <th class="tensanpham">
+                                            <p>Tên thư mục</p>
+                                        </th>
+                                    </tr>
+                                    <tr class="list__table--center">
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            <p>
+                                                Giày nam
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="list__table--center">
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            <p>
+                                                Giày nữ
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="list__table--col2 pages" id="sanpham" style="display: none;">
+                            <p>demo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script>
+    function openpages(pagesName) {
+        var i;
+        var x = document.getElementsByClassName("pages");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(pagesName).style.display = "block";
+    }
+</script>
